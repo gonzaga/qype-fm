@@ -1,0 +1,17 @@
+<%= image_tag @venue.image.medium %> 
+<%= @venue.title %>
+<br>
+Events nearby:<br>
+<% @nearby_events.each do |event| %>
+  <% place = @qype.match_places(place_attributes(event.venue)).first %>
+  <% unless place.blank? %>
+    <div style="margin-bottom: 10px">
+      <%= event.title %> at <%= link_to place.title, place.qype_link %><br>
+      <%= image_tag(event.image(:medium)) %> <br>
+      <%= event.start_date %><br>
+      <%= event.artists %><br>
+      <%= event.description %><br>
+      <%= event.attendance %><br> attendancies
+    </div>
+  <% end %>
+<% end %>

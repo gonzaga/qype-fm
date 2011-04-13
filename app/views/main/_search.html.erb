@@ -1,0 +1,7 @@
+<% form_tag url_for(:controller => "main", :action => "search") do %>
+  <%= label_tag "Name" %>
+  <%= text_field_tag "name",nil, :placeholder => "e.g. Cotton Club" %>
+  <%= label_tag "Location"%>
+  <%= text_field_tag "location",nil, :placeholder => "e.g. Hamburg" %>
+  <%= submit_tag "go!" %>
+<% end %>

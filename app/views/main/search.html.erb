@@ -1,0 +1,14 @@
+<h>Events around you</h>
+  <br>
+Where are you now?
+<%= render :partial => "search" %>
+<br>
+
+Pick up the right place:<br>
+
+<% unless @venues.blank? %>
+  <% @venues.each do |venue| %>
+    <%= link_to venue.title, "/main/venue/#{venue.qype_id}" %><br>
+    <%= link_to "#{venue.title} on Qype", venue.qype_link %><br><br>
+  <% end %>
+<% end %>
