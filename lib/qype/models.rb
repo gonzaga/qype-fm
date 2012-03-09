@@ -50,7 +50,8 @@ module Qype
     element :phone, String
     element :average_rating, Float
     element :point, String
-
+    element :external_id, String
+    
     has_one :image, Image
     has_one :address, Address
     has_many :categories, Category
